@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+import MyComponent from './components/Contact'
+import MuiGrid from './components/MuiGrid'
+
+const theme = createTheme({
+    // Customize your theme here
+    palette: {
+        primary: {
+            main: '#2196F3',
+        },
+        secondary: {
+            main: '#FF4081',
+        },
+    },
+    typography: {
+        fontFamily: 'Roboto, sans-serif',
+        fontSize: 16,
+    },
+})
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <ThemeProvider theme={theme}>
+            {/* <MuiGrid /> */}
+            {/* <MyComponent />
+             */}
+            {/* Your app content */}
+        </ThemeProvider>
+    )
 }
 
-export default App;
+export default App
